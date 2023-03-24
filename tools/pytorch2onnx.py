@@ -382,13 +382,15 @@ if __name__ == '__main__':
             num_classes = segmentor.decode_head.num_classes
         mm_inputs = _demo_mm_inputs(input_shape, num_classes)
 
+    output_file = args.output_file + '_' + str(input_shape[-2]) + 'x' + str(input_shape[-1]) + '.onnx'
+
     # convert model to onnx file
     pytorch2onnx(
         segmentor,
         mm_inputs,
         opset_version=args.opset_version,
         show=args.show,
-        output_file=args.output_file,
+        output_file=output_file,
         verify=args.verify,
         dynamic_export=args.dynamic_export)
 

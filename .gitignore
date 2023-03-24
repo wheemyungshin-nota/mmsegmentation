@@ -8,6 +8,10 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+data/
+onnx_models/
+weights/
+work_dirs/
 build/
 develop-eggs/
 dist/
